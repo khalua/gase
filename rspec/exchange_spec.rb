@@ -13,9 +13,13 @@ describe Exchange do
     end
   end
 
+  describe "#name" do
+    it "has a name" do
+      expect(exchange.name).to eq 'Gase'
+    end
+  end
+
 
 
 
 end
-
-describe

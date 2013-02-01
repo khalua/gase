@@ -1,6 +1,7 @@
 class Exchange
-  attr_accessor :accounts
+  attr_accessor :name, :accounts
   def initialize(accounts)
+    @name = name
     @accounts = {}
   end
 
