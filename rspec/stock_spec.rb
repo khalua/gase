@@ -10,9 +10,9 @@ describe Stock do
     end
   end
 
-  describe "#set_price" do
+  describe "#get_price" do
     it "should set the last price" do
-      stock.set_price
+      stock.get_price
       expect(stock.price).to_not eq 0
     end
 

@@ -14,6 +14,8 @@ a2 = Account.new("Aly",500_000)
 s1 = Stock.new('AMZN')
 s2 = Stock.new('APPL')
 s3 = Stock.new('CSCO')
+p1 = Portfolio.new('Tech',['AMZN','APPL','CSCO'])
+
 
 a1.buy_stock('DIS',100)
 a1.buy_stock('IBM',50)
