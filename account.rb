@@ -11,7 +11,16 @@ class Account
     s1 = Stock.new(ticker)
     s1.set_price
     @book[ticker] = {ticker: ticker, initial_price: s1.price, quantity: quantity}
+    cost = quantity * s1.price
+    @cash_balance = @cash_balance - cost
   end
+
+  def stocks_worth
+    @book.keys.each do |x|
+      puts "#{x} is #{Stock.new(x).get_price}"
+    end
+  end
+
 
   def show_book
     @book.each {|k,v|  }

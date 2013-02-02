@@ -15,6 +15,7 @@ class Stock
       YahooFinance::get_quotes(YahooFinance::StandardQuote, "#{@ticker}")["#{@ticker}"].lastTrade
     rescue
       puts "Oh oh. Yahoo out to lunch"
+      retry
     end
   end
 
