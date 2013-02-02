@@ -1,12 +1,11 @@
 class Portfolio
-  def initialize(name,symbol,quantity)
-    @name = []
-    @symbol = symbol
-    @quantity = quantity
+  def initialize(name,ticker,quantity)
+    @name = {}
+    @ticker = ticker
   end
 
   def to_s
-    "The #{@name} porfolio has "
+    "The #{@name} porfolio has #{@ticker.count} symbols"
   end
 
 

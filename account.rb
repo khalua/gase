@@ -3,11 +3,16 @@ class Account
   def initialize(name,cash_balance)
     @name = name
     @cash_balance = cash_balance
+    @stocks = []
     @portfolios = {}
   end
 
   def to_s
-    "{@name}'s account has #{@portfolios.count} accont(s)"
+    "#{@name}'s account has #{@stocks.count} stock(s) and #{@portfolios.count} portfolio(s)."
+  end
+
+  def buy_stock(symbol)
+
   end
 
 end
