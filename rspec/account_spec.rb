@@ -11,6 +11,13 @@ describe Account do
     it "should have an empty portfolio" do
       expect(account.portfolios.count).to eq 0
     end
-
   end
+
+  describe "#buy_stock" do
+    it "should buy a stock at current price" do
+      account.buy_stock('AMZN',50)
+      expect(account.book['AMZN'].ticker).to eq 'AMZN'
+    end
+  end
+
 end

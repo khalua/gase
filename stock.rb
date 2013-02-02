@@ -6,7 +6,7 @@ class Stock
   end
 
   def to_s
-    "#{@ticker}: #{@price}"
+    "#{@ticker} : #{@price}"
   end
 
 
@@ -20,10 +20,6 @@ class Stock
 
   def set_price
     @price = get_price
-  end
-
-  def cock
-    puts
   end
 
 end
