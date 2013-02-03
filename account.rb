@@ -14,7 +14,7 @@ class Account
     @cash_balance = @cash_balance - cost
     puts "#{quantity} shares of #{ticker} bought at $#{price} each."
     puts "Total cost #{cost.round(2)}."
-    puts "New acccount balance $#{@cash_balance}"
+    puts "New account balance $#{@cash_balance.round(2)}"
   end
 
   def sell_stock(ticker, quantity)
@@ -24,7 +24,7 @@ class Account
     @cash_balance = @cash_balance + cost
     puts "#{quantity} shares of #{ticker} sold at $#{price} each."
     puts "Total cost $#{cost.round(2)}."
-    puts "New acccount balance $#{@cash_balance}"
+    puts "New account balance $#{@cash_balance.round(2)}"
   end
 
   def value(ticker)
@@ -41,7 +41,7 @@ class Account
         puts "#{@book[ticker][:quantity]} shares of #{ticker} current price is $#{Stock.new(ticker).get_price} and value is $#{value(ticker)}"
       end
       puts "________________"
-      puts "Cash Balance: $#{@cash_balance}"
+      puts "Cash Balance: $#{@cash_balance.round(2)}"
       puts "Stock Value: NEED HERE"
     end
   end
