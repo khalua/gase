@@ -23,4 +23,8 @@ class Stock
     @price = get_price
   end
 
+  def show_price
+    set_price
+    "#{@ticker} : #{@price}"
+  end
 end

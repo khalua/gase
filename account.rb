@@ -4,7 +4,7 @@ class Account
     @name = name
     @cash_balance = cash_balance
     @book = {} #ticker, initial_price, quantity
-    @portfolios = {}
+    @portfolios = {} #name,
   end
 
   def buy_stock(ticker, quantity)
@@ -36,11 +36,19 @@ class Account
       end
     end
 
+  def create_portfolio(name, *tickers)
+      name.to_sym
+      tickers.to_a
+      @portfolios[name] = tickers
+      puts "Portfolios: #{@portfolios}"
+  end
 
-  def create_portfolio(name,*tickers)
-    puts "Type a name for your Portfolio, followed by tickers "
-    @portfolios = Portfolio.new(name,*tickers)
 
+  def portfolio_balance(name)
+    # puts "What portfolio? #{@portfolios.keys}"
+    # name = gets.chomp
+    puts "#{@portfolios[name]}"
+    @portfolios[name].map { |x| puts "#{Stock.new(x).show_price}"  }
   end
 
 
