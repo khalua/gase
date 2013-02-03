@@ -7,20 +7,18 @@ require_relative 'stock'
 require_relative 'functions'
 
 
-# #test data
-# ga = Exchange.new('GASE')
-$exchange.accounts["Tony"] = Account.new("Tony",1_000_000)
-$exchange.accounts["Aly"] = Account.new("Aly",500_000)
-# a1.create_portfolio("Tech","AMZN","AAPL")
-# a1.create_portfolio("Auto","F","GM")
+# # #test data
+# $exchange.accounts["Tony"] = Account.new("Tony",1_000_000)
+# $exchange.accounts["Aly"] = Account.new("Aly",500_000)
 
-$exchange.accounts["Tony"].buy_stock('DIS',100)
-$exchange.accounts["Tony"].buy_stock('IBM',1)
-$exchange.accounts["Tony"].buy_stock('DELL',1)
-$exchange.accounts["Tony"].buy_stock('AAPL',1)
-$exchange.accounts["Tony"].buy_stock('F',100)
-$exchange.accounts["Tony"].buy_stock('GM',50)
-$exchange.accounts["Tony"].create_portfolio('Tech',['IBM','AAPL','DELL'])
+# $exchange.accounts["Tony"].buy_stock('DIS',100)
+# $exchange.accounts["Tony"].buy_stock('IBM',1)
+# $exchange.accounts["Tony"].buy_stock('DELL',1)
+# $exchange.accounts["Tony"].buy_stock('AAPL',1)
+# $exchange.accounts["Tony"].buy_stock('F',100)
+# $exchange.accounts["Tony"].buy_stock('GM',50)
+
+# $exchange.accounts["Tony"].create_portfolio('Tech',['IBM','AAPL','DELL'])
 
 
 response = menu
