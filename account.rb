@@ -9,12 +9,16 @@ class Account
 
   def buy_stock(ticker, quantity)
     price = Stock.new(ticker).price
-    @book[ticker] = {ticker: ticker, initial_price: price, quantity: quantity}
-    cost = quantity * price
-    @cash_balance = @cash_balance - cost
-    puts "#{quantity} shares of #{ticker} bought at $#{price} each."
-    puts "Total cost #{cost.round(2)}."
-    puts "New account balance $#{@cash_balance.round(2)}"
+    cost = price * quantity
+    if cost < @cash_balance
+      @book[ticker] = {ticker: ticker, initial_price: price, quantity: quantity}
+      @cash_balance = @cash_balance - cost
+      puts "#{quantity} shares of #{ticker} bought at $#{price} each."
+      puts "Total cost $#{cost.round(2)}."
+      puts "New account balance $#{@cash_balance.round(2)}"
+    else
+      puts "You do not have sufficient funds for this order."
+    end
   end
 
   def sell_stock(ticker, quantity)
