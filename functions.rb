@@ -62,7 +62,7 @@ def sell_stock
   $exchange.accounts[name].show_book
   puts "Which stock?"
   print Rainbow("-->").red
-  #puts "#{$exchange.accou  nts[name].book.keys.join(', ')}"
+  #puts "#{$exchange.accounts[name].book.keys.join(', ')}"
   ticker = gets.chomp
   puts "Quantity? "
   print Rainbow("-->").red
