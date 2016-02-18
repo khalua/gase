@@ -1,4 +1,4 @@
-require 'pry-debugger'
+require 'byebug'
 require 'rainbow'
 require 'yahoofinance'
 require_relative 'exchange'

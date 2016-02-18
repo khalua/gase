@@ -9,29 +9,29 @@ def menu
   puts '3 : Buy Stocks'
   puts '4 : Sell Stocks'
   puts 'Portfolio Management'
-  puts '5 : Create Portfolio'
+  puts '5 : Create Portfoli o'
   puts '6 : Show Portfolio'
   puts "Q : Quit\n\n"
-  print '--> '.color('#ff3300')
+  print Rainbow("-->").red
   gets.chomp
 end
-
+  
 def add_account
   puts "Enter name of new account: "
-  print "-->".color('#ff3300')
+  print Rainbow("-->").red  
   name = gets.chomp
   puts "Enter opening cash balance: "
-  print "-->".color('#ff3300')
+  print Rainbow("-->").red
   balance = gets.to_f
   $exchange.accounts[name] = Account.new(name, balance)
   puts "Account Added"
   gets
 end
 
-def show_account
+def show_account  
   puts "Account name? "
   $exchange.show_all_accounts
-  print "-->".color('#ff3300')
+  print Rainbow("-->").red
   name = gets.chomp
   $exchange.accounts[name].show_book
   gets
@@ -39,50 +39,50 @@ end
 
 def buy_stock
   puts 'Buy Stock'
-  puts '---------'
+  puts '---------'  
   puts "What Account? "
   $exchange.show_all_accounts
-  print "-->".color('#ff3300')
+  print Rainbow("-->").red  
   name = gets.chomp
   puts "Stock name? "
-  print "-->".color('#ff3300')
+  print Rainbow("-->").red
   ticker = gets.chomp
-  puts "Quantity? "
+  puts "Quantity? " 
   quantity = gets.to_i
   $exchange.accounts[name].buy_stock(ticker, quantity)
-  print "-->".color('#ff3300')
+  print Rainbow("-->").red
   puts "Press enter to continue"
   gets
 end
-
+  
 def sell_stock
   puts "Account? "
-  print "-->".color('#ff3300')
-  name = gets.chomp
+  print Rainbow("-->").red
+  name = gets.chomp 
   $exchange.accounts[name].show_book
   puts "Which stock?"
-  print "-->".color('#ff3300')
-  #puts "#{$exchange.accounts[name].book.keys.join(', ')}"
+  print Rainbow("-->").red
+  #puts "#{$exchange.accou  nts[name].book.keys.join(', ')}"
   ticker = gets.chomp
   puts "Quantity? "
-  print "-->".color('#ff3300')
+  print Rainbow("-->").red
   quantity = gets.to_i
   $exchange.accounts[name].sell_stock(ticker,quantity)
   puts "Press enter to continue"
   gets
 end
 
-def create_portfolio
+def create_portfolio  
   puts "Account? "
   $exchange.show_all_accounts
-  print "-->".color('#ff3300')
+  print Rainbow("-->").red  
   name = gets.chomp
   puts "Name for new portfolio"
-  print "-->".color('#ff3300')
-  portfolio = gets.chomp
+  print Rainbow("-->").red
+  portfolio = gets.chomp  
   $exchange.accounts[name].show_book
   puts "What stocks do you want in this portfolio? (space separated)"
-  print "-->".color('#ff3300')
+  print Rainbow("-->").red
   tickers = gets.chomp.split
   $exchange.accounts[name].create_portfolio(portfolio, tickers)
   puts "Press enter to continue"
@@ -90,15 +90,15 @@ def create_portfolio
 end
 
 
-def show_portfolio
+def show_portfolio  
   puts "Account? "
   $exchange.show_all_accounts
-  print "-->".color('#ff3300')
+  print Rainbow("-->").red
   name = gets.chomp
-  $exchange.accounts[name].show_all_portfolios
+  $exchange.accounts[name]  .show_all_portfolios
 
   puts "Select portfolio to display"
-  print "-->".color('#ff3300')
+  print Rainbow("-->").red
   portfolio = gets.chomp.to_sym
   $exchange.accounts[name].portfolio_balance(portfolio)
 
